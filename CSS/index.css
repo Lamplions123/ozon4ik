@@ -3,79 +3,132 @@
     --light-general-color: #189b2c;
     --light: #fff;
     --dark: #000;
+    --general-color-filter: brightness(0) saturate(100%) invert(16%) sepia(99%) saturate(4503%) hue-rotate(142deg) brightness(98%) contrast(86%);
+    --light-general-color-filter: brightness(0) saturate(100%) invert(44%) sepia(66%) saturate(671%) hue-rotate(80deg) brightness(93%) contrast(89%);
+}
+
+header.container{
+    padding-top: 20px;
 }
 
 nav{
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    gap: 35px;
+    transform: scale(2);
 }
 
-.catalog-button{
-    align-items: center;
+.general-color-button{
     background-color: var(--general-color);
     color: var(--light);
     border: 0;
-    border-radius: 4px;
+    border-radius: 5px;
     display: flex;
+    align-items: center;
 }
 
-.catalog-button:hover{
+.general-color-button:hover{
     cursor: pointer;
     background-color: var(--light-general-color);
 }
 
-.catalog-button::before{
+.general-color-button::before{
     content: "";
-    width: 25px;
-    height: 20px;
-    background-image: url(../imgs/catalog-icon.png);
-    background-size: 20px;
     background-repeat: no-repeat;
+    height: 15px;
+    width: 20px;
+    background-size: 15px;
 }
 
+.general-color-button.catalog::before{
+    background-image: url(../imgs/icons/catalog-icon.png);
+    filter: invert();
+}
 
-
-.sign-in-button{
+.icon-button{
     background-color: transparent;
+    align-items: center;
+    color: var(--general-color);
     border: 0;
+    display: flex;
 }
 
-.sign-in-button:hover{
+.icon-button:hover{
     cursor: pointer;
+    color: var(--light-general-color);
+}
+
+.icon-button::before{
+    content: "";
+    background-repeat: no-repeat;
+    height: 15px;
+    width: 20px;
+    background-size: 15px;
+}
+
+.icon-button.enter::before{
+    background-image: url(../imgs/icons/user.png);
+    filter: invert(70%);
+}
+
+.icon-button.orders::before{
+    background-image: url(../imgs/icons/box.png);
+    filter: invert(70%);
+}
+
+.icon-button.favourite::before{
+    background-image: url(../imgs/icons/heart.png);
+    filter: invert(70%);
+}
+
+.icon-button.cart::before{
+    background-image: url(../imgs/icons/shopping-bag.png);
+    filter: invert(70%);
+}
+
+.icon-button:hover::before{
+    filter: var(--light-general-color-filter);
+}
+
+input[type="search"]{
+    border-radius: 6px;
+    border-color: var(--general-color);
+    outline: none;
+}
+
+.container{
+    display: flex;
+    padding-top: 100px;
+    max-width: 60%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.product{
+    width: 256px;
+    height: 465px;
+}
+
+.product .thumbnail{
+    width: 100%;
+    height: 350px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+.product .price{
     color: var(--general-color);
 }
 
-.sign-in-button::before{
-    content: "";
-    display: grid;
-    background-image: url(../imgs/user.png);
-    height: 20px;
-    width: 20px;
-    background-size: 20px;
-    background-repeat: no-repeat;
-    border-radius: 16px;
+.product .old-price{
+    color: gray;
+    text-decoration-line: line-through;
 }
 
-
-
-
-.orders-button{
-    background-color: transparent;
-    border: 0;
+.product .discount{
+    color: purple;
 }
 
-.orders-button:hover{
-    cursor: pointer;
-    color: var(--general-color);
-}
-
-.orders-button::before{
-    content: "";
-    display: grid;
-    background-image: url(../imgs/box.png);
-    height: 20px;
-    width: 20px;
-    background-size: 20px;
-    background-repeat: no-repeat;
+.product .reviews{
+    color: gray;
 }

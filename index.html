@@ -9,14 +9,33 @@
 </head>
 
 <body>
-    <nav>
-        <div class="logo"></div>
-        <button class="catalog-button">Каталог</button>
-        <button class="sign-in-button">Войти</button>
-        <button class="orders-button">Заказы</button>
-        <button>Favourite</button>
-        <button>Cart</button>
-    </nav>
+    <header class="container">
+        <nav>
+            <div class="logo"></div>
+            <button class="general-color-button catalog">Каталог</button>
+            <input type="search" placeholder="Искать на...">
+            <button class="icon-button enter">Войти</button>
+            <button class="icon-button orders">Заказы</button>
+            <button class="icon-button favourite">Избранное</button>
+            <button class="icon-button cart">Корзина</button>
+        </nav>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="product">
+                <div class="thumbnail" style="background-image: url(imgs/thumbnails/1.webp);"></div>
+                <span class="price">$27</span>
+                <span class="old-price">$38</span>
+                <span class="discount">-30%</span>
+                <p class="name">Ёлка</p>
+                <span class="rating">4.3</span>
+                <span class="reviews">84 527</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="JS/script.js"></script>
 </body>
 
 </html> 
