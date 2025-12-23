@@ -111,7 +111,7 @@ for (let product of products) {
     appendList.push(buyDiv)
 
     let buyButton = document.createElement("button")
-    buyButton.className = "general-color-button"
+    buyButton.className = "color-button general"
     buyButton.textContent = getRandomDay()
 
 
@@ -122,3 +122,23 @@ for (let product of products) {
     buyDiv.append(buyButton)
     document.getElementById("feed").append(productDiv);
 }
+
+
+
+
+
+
+function showOrHideLogin(){
+    let element = document.querySelector(".login-fullscreen")
+    element.style.visibility = element.style.visibility === 'visible' ? 'hidden' : 'visible'
+}
+
+function loginAlert(){
+    alert("You must be logged in!")
+}
+
+document.querySelector(".close").addEventListener("click", showOrHideLogin)
+document.querySelector(".login-footer").addEventListener("click", showOrHideLogin)
+document.querySelector(".cart").addEventListener("click", loginAlert)
+document.querySelector(".favourite").addEventListener("click", loginAlert)
+document.querySelector(".orders").addEventListener("click", loginAlert)
