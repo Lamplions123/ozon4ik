@@ -363,3 +363,14 @@ footer .social-media {
     filter: invert();
     transform: translate(175px, -325px);
 }
+
+.logo{
+    position: absolute;
+    background-image: url(../imgs/icons/logo.png);
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    background-size: 60px;
+    left: -85px;
+    bottom: -40px;
+}

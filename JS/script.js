@@ -5,11 +5,13 @@ generateProducts(thumbnails + 1)
 
 function generateProducts(number) {
     for (let i = 1; i < number ; i++) {
-        console.log(i)
-        let price = getRandomArbitrary(10, 100)
+        let price = getRandomArbitrary(10, 100) /* функция для
+        получения рандомного числа в диапозоне */
         let oldPrice = getRandomArbitrary(price + 10, price + 100)
-        let discount = getRandomArbitrary(0, 1)
-        let rating = getRandomArbitrary(1, 5, 1)
+        let discount = getRandomArbitrary(0, 1) /* 0 = false, 
+        1 = true */
+        let rating = getRandomArbitrary(1, 5, 1) /* 3 число - 
+        сколько знаков после запятой */
         let reviews = getRandomArbitrary(1, 4000)
         let left = getRandomArbitrary(1, 999)
 
@@ -33,7 +35,9 @@ function getRandomDay() {
     let random = getRandomArbitrary(0, 15)
 
     if (random == 0) {
-        return "Сегодня"
+        return "Сегодня" /* так как весь код в функции,
+        а имя функции говорит, что  вызыватель что-то получит (get),
+        то мы и возвращаем (return) ответ */
     }
     else if (random == 1) {
         return "Завтра"
@@ -42,12 +46,15 @@ function getRandomDay() {
         return "Послезавтра"
     }
     else {
-        let date = new Date()
+        let date = new Date() /* получение текущего времени*/
 
-        date.setDate(date.getDate() + random)
+        date.setDate(date.getDate() + random) /* добавление
+        рандомного количество дней в переменную времени*/
 
-        let day = date.getDate()
-        let month = date.toLocaleString("ru", { month: "long" })
+        let day = date.getDate() 
+        let month = date.toLocaleString("ru", { month: "long" }) /*
+        получаем длинное имя месяца в формате "Декабрь", "Январь",
+        'Май' вместо "Дек", "Янв", "Май" */
 
         return `${day} ${month}`
     }
